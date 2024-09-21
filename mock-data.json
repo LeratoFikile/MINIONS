@@ -1,0 +1,18 @@
+[
+    {"location": "Kimberley Central", "status": "Outage", "start_time": "2024-09-25T08:00:00", "end_time": "2024-09-25T16:00:00"},
+    {"location": "Beaconsfield", "status": "Planned Maintenance", "start_time": "2024-09-26T10:00:00", "end_time": "2024-09-26T12:00:00"},
+    {"location": "Galeshewe", "status": "Outage", "start_time": "2024-09-27T09:00:00", "end_time": "2024-09-27T15:00:00"},
+    {"location": "Ritchie", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Upington Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Kenhardt", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Postmasburg Central", "status": "Outage", "start_time": "2024-09-29T10:00:00", "end_time": "2024-09-29T14:00:00"},
+    {"location": "Springbok Central", "status": "Planned Maintenance", "start_time": "2024-09-28T14:00:00", "end_time": "2024-09-28T18:00:00"},
+    {"location": "Colesberg Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "De Aar Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Hartswater Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Kuruman Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Warrenton Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Fraserburg Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Pofadder Central", "status": "Normal", "start_time": null, "end_time": null},
+    {"location": "Niewoudtville Central", "status": "Normal", "start_time": null, "end_time": null}
+]

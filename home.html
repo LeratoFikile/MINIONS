@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaGuard - Home</title>
+  <link rel="icon" type="png" href="../ASSET/logo.jpg">
+  <link rel="stylesheet" href="../CSS/home.css">
+  <link rel="stylesheet" href="../CSS/thuso.css">
+  <script src="https://kit.fontawesome.com/26a50bdc34.js" crossorigin="anonymous"></script>
+  <script src="../JAVASCRIPT/home.js" defer></script>
+  <script src="../JAVASCRIPT/thuso.js"></script>
+  <style>
+    /* Icon styling */
+    .chat-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+  
+    .chat-icon img {
+        width: 100%;
+        height: 100%;
+    }
+  
+    /* Pop-up form modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+  
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+  </style>
+</head>
+
+
+
+<body>
+
+
+  <header>
+    <div class="nav__container">
+      <div class="nav__logo--container">
+        <figure class="logo__container">
+          <img src="../ASSET/logo.jpg" alt="AQUAGUARD Logo" class="logo">
+        </figure>
+        <p class="nav__logo--text">AQUAGUARD</p>
+      </div>
+      <nav>
+        <ul class="nav__links">
+          <li class="nav__item"><a href="./dashboard.html" class="nav__link">Dashboard</a></li>
+          <li class="nav__item"><a href="./gamification.html" class="nav__link">Games</a></li>
+          <li class="nav__item"><a href="./community.html" class="nav__link">Community</a></li>
+          <li class="nav__item"><a href="./achievements.html" class="nav__link">Achievements</a></li>
+          <li class="nav__item"><a href="./alerts.html" class="nav__link">Alerts</a></li>
+          <li class="nav__item"><a href="./help.html" class="nav__link">Help/Support</a></li>
+          
+          <li class="nav__item"><a href="./help.html" class="nav__link">Help/Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="weather__section">
+      <div class="weather__card">
+        <div class="weather__info">
+          <h2><i class="fas fa-cloud-sun"></i> WEATHER</h2>
+          <p id="currentTemperature">Loading...</p>
+        </div>
+      </div>
+      <button class="weather__button" onclick="location.href='./weather.html'">More Info</button>
+    </section>
+
+    <section id="updates-result">
+      <div class="slideshow-container">
+          <!-- News updates will be dynamically injected here by News.js -->
+      </div>
+      <p class="instructions">Slides change every 5 seconds. Click on a news item to pause.</p>
+  </section>
+
+  
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="footer__container">
+      <div class="footer__about">
+        <h3>AquaGuard</h3>
+        <p>Join us in conserving water using technology.</p>
+        <form class="newsletter__form" action="" method="get">
+          <input type="email" name="email" class="newsletter__input" placeholder="Enter your email address..." required>
+          <button type="submit" class="newsletter__btn">Log Out</button>
+        </form>
+      </div>
+      <div class="footer__links">
+        <h3>Quick Links</h3>
+        <ul class="footer__links-list">
+          <li class="footer__item"><a href="./home.html" class="footer__link">Home</a></li>
+          <li class="footer__item"><a href="./dashboard.html" class="footer__link">Dashboard</a></li>
+          <li class="footer__item"><a href="./community.html" class="footer__link">Community</a></li>
+          <li class="footer__item"><a href="./help.html" class="footer__link">Help/Support</a></li>
+          <li class="footer__item"><a href="./setting.html" class="footer__link">Settings</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <h3>Follow Us</h3>
+        <ul class="footer__social-list">
+          <li class="footer__item">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-facebook footer__icon"></i> Facebook
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-instagram footer__icon"></i> Instagram
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-twitter footer__icon"></i> Twitter
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-linkedin footer__icon"></i> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+          <!-- Chat Icon -->
+          <div class="chat-icon" id="chat-icon">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDw8PDxAPEBAQDxAPDQ8PDw8NDg0OFREWFhURFRUYHSggGBolGxUVITEhJSkrLjEuFx8zODMtNygtLisBCgoKDg0OGBAQFy0dHR0rKy0uLS0rKystLS4tLS0rKy0tKy0tLS0tLSstLSstLTctLS0rLTctKystNysxLTcyOP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAAEDBAUGB//EAD8QAAICAQEFBgMECQIGAwAAAAECAAMRBAUSITFBBhNRYXGBIjKRBxRCoSMzUmKCkrHB0aLwFRZDc4OyJERy/8QAGgEAAgMBAQAAAAAAAAAAAAAAAQIAAwQFBv/EACoRAAICAQMEAQMEAwAAAAAAAAABAhEDBBIhIjFBURMyYfAFgZHBFEJx/9oADAMBAAIRAxEAPwDzmKKKWiiiihASEBxCAj4j4hANHxHxHAkADiEBHxHAgBY2IsQsRYkADiLEPE0diUDvDa3yUAWHwNn/AE1+vH0Uxoxt0CUtqs36NH3tN2z1GXq06tUBxzqqybHUeZLWr7icYJ0vZ3aBr1SW54hwx+vGD232SNNrH3B+hvH3ijwCufiQejZHpiX541Rm08upxZzuIsQsRYmc1gYixDxFiQgGI+IWIsSEBihYjYkINHEWIhIQcRxGEeQgooopAFSPFHAgLBAQgIgIQEIGxgIQEUICAUHEcCFiOBCQECEBCAj4hoAIEWIeIsSUSwQOgGSeAA4knwE19oL3Fa6YfMPjvI5G0/h9AMD6nrJNhaYIr6yz5avhoB/Hf+16Lz9ceEyr7S7FjzJzNOGFcmbJLc68Il0TfGJ3ev0f3/ZeAM6jR5tq6s9WP0lY9QMgeKCcBpj8Qnc9k9pGqxDnAJAP1micN8KMeTJ8eRSPPosTqO3mwhpdT3lQxp9RmyrHyo/46vLBOR5MPCczic6jqRkmrBxFiFiNiQYHEWIWI2ICDRoUaQgJihYjYkANHEUUhB4oo0hCuBCAjgRxIMIQohCAkAMBCxHAhAQgsECPiFiFiGgWCBCxHxHxDQBsS3srZzai1al4D5rH6V1jmx/3zxK6VliFUEsxCqo5knkBOk1TLodOaVIN1mDqHHHB6ID4D/JjxjbKsk6VLuUO0etQlaKRu01DdQf3PiTz95iARmbJyeskUTVFFVUgqOc3tA+MTDpHGa+jM0Q7GHVdjv6KK9oaJ9LYQGxmpzx7q4D4X9Oh8iZ5XrNK9Nj1WqVsrYo6now/t5zudh6w1uD0lzt1sQaqoaygZuqXF6jnbSPxebL+Y9BMWfFTtFmg1Sa2SPMyI2JJiNiZjqWR4jYkhEHEgbAjSTEEiAawY0KNAQYiNHMaQAooopCEYhARhDAkCxAQgIhHAjJCtjgQhEBCAhoUYCEBEBDAjUQHEfELE1tnadKlGqvHwj9RWfxt+2R4A8vE/mUhJSpFjQ1ro6/vFo/Tuv6FDzqU/iP7xH0HvOc1eqaxyzHJJh7S2g1zlmPPl5SqJdFFaXl9w0EmAkdYk4l8UJNiq5zV0czK+c09LLYmDU9jX055TpdjbRKYB5TmNMeU1NPDKKa5OHLK8c7Rj9tdgCh/vFA/+PaeQ5UWniU8lPMe46CcxiesaZktrai4b1di7rA+HiPAjnmed7f2O+kvapviUjeqsxgWVnkfXoR4zm5IbWen0OrWeH3MrEEiSYjESs3kWI0kIg4gCRmNDIgwBBxBhxiICDRo8UhAQIQjCEIUBjiEIwhRhWOBCEYQwIyAOBCAiAk2moNjqi82OBnkPEnyAyfaEVsm2fp1O9bb+qrxv9O8bpWPXr5e0o7Q1z6iwDxIWtRwAHIADoJY21ql4U1fq68gHkXb8TnzMy9JqRXdU55K6sfQHjGTrgVJvqCvoat3rb5kYow54YHBjoJ1fbPs6KwmuoO9RqTvkZya3bicHqCczmKxL4oTfaJKxDxCrWPYAJajO5Wx61l/TytSuRmWapbEyZnZqaXpNnTDlMTTviR3jUXvu0WitFHxNzJPkIJypHHyYHkk+aXs7XSID69JZ23sVdbpjUcC1ctp3P4bMcj+6eR9j0mbsyp60TfYvgDLnrOq0vIGZM5s/Sntk68HhmooZHZHUq6MVdTzVgcEGRkT0b7Sdg7yjXVDiu6mqA6ryS324KfLHhPOiJlPTJ2RkQTJCIBkGAMCG0aAgBijmNAMNiKPFAEEQhGjiMhGOIYgiGIwBxDWCIaxhQhNNf0GmNp/WX5SvxWoHDN7kY9FPjK+zNE191dK87HC5/ZHNm9gCfaT9s9Sp1BrThXUBXWPBVGAPyhEly1E521ufjM25HzvGX2MEkdZW1ZfF7SxsrbtioKLHZqc/ChJKpx6eE19VpRwZOR4zlNRSPmX3H95qbI2mQO7c5H4T4eUuw5a6ZGfUYL64fubOzdP3j7h/Yc/RZnO/D04TX2PaFtJPWqwfUTDvPz45ZbH1mmbpGHHbm7NlU3aVY825cDg+8eluGeXj5RtVrlNFSZ4KoJPRRiYer1htRgjrWoIGDnfs/wJJ5owXIuLTzyv9yXae3Mnu6yQoOCw5sfKX+yVj9/kqwBU8XzxmfsDRVb287B2HIdB5zr6NQnADAlWNSn1tg10o4oPDGHjudJo9U4BUHKngVPEe06TQ2MVwy7rDp5Tj9PZyI8iPWdRsrVWXkscby7oOBjI8fWPmjwcX9NntybWzVqZLA1dgBV1KOp5MpGCJ4x2l2Q2j1VunbJCneqY/jpbijfTgfMGenbR1fd21gHDZJ9hM37Ttnd9pKdag+KkhLT1NLkAZ9Hx/OZknGqfs9Pp8u5uD8HlxgESQwDFNZGYJhmCZCAGNCMGKxkKKKKQgwjiCIQjCsJYYgCGIwoYhrBEIQis6/sFpwo1esblTT3aH9+zmR5hVI/inD6+/ftsf9pifznd6i8aXYlS8rNU9lrDqQTur/pUTzx4rZILlsAmW9h7FfW390GKIuO8cDJ48lHnKLGdx2BASoP1ZnJPnvkD8gIGWmLt/sDrNOd/TK+pqx8QGDap68B8w9OPlOQ32RirBlYH4kYFWU+BB4ie9be229Gg1FlQJtFZWndGSLG4A48s59pwGxRo9Uul0W0WT7y1j793eWW6qwu5Za7LCMI3Hd+ZuY5HAlbZPkowNl7ZRMtZnIUgADJOZBbrRuk7jAHrwku2dgjT6/U6ZWLV027qM3zFSquAfMBse0sW6M7mPCaoOcomaaxRnfsz9btMWU1VqgXcGHbOTZ4ZmcMkhVBZmOFVQWZj4ADiTLuu2cyLvgcMZPl5zpNh3DQaarUNV3dz6hqrbHXFtahWbdAb5c4X2J9ZnyKV9RphOEYdJf7LfZjrdRizU2HR18woAfUMPrhPfJ8hO6P2V6YVHutTqlux8FtlosXe/erwAR44wfAiZn2d9tGvqu+8ahH3dYK6ardxdUNPaVWplII38OcEYPA5zwwfSaLciJukuw1RmuUeR7NsdS9Nw3babGpuXJIWxeo8VIwQeoInQ7H2h3Fgb8B4WD93x9uch7aaQV7R7wf/AGNMjOPGypim9/KyD+GU0bhOpjfyY1Z4rXw/xtU3DwbvaPZLEJqEcYR1JOchkZgOHnxmzs1E1Oms0r/LZQyv5bxZc+xGfacO9x/Rqzt3a2KxUklVAYEnE2ex220W5lsOA4CoTyGGYgH+aJlxy2V3o6Oi1aeRSqrPL9RS1bvW4w6OyOPBlJBH1BkRnVfaToe52jaR8t6pevh8Qw3+pWPvOVMxp2egQBgmFBMgRjBhGDAwoUUUUAQBCEEQowoQhiRiGIQEiccAZJJAAHEknkAJ0dPZawJv3NuHGe7Ve8sx544D85Q7PN3ZfUBN968JQpGR3jZJf+FVPu6ylrb7tRfj4ntdgqqOLEngFAl0UqtmWbk5bYujR7ZarP3SkH4atJQuPPulJ/Mmcy0u7VuLuhbn3VQbPAghAD/SUmlEu5ph2IWmx2c2p3YNROMEsn7wJyR65J+syGkDpmQc9L023EZDWbAhI+FmwdxscGwec4tNjrpNRXqbtTp7hVaLglTGyy6xW3lBHTLAZOZlq78t4n1+L+sW6Blm6QbQUay6prne+w5e2wux8z/vHtL6uCJzFeswR4DwltNor4maceSKVGXNp5N2besTepIHPBmfsfWrYl2m1jN3NhRhf8x01yruo7fukDGf8yCzbOFIUZOMcZAU5WVkqccCDg4PSDK1PsHBCWNPcdn2U7ArVqatTZqK7K6nFtYTJ32HFScj4QDg8CeU9X0WrUkKrZPlxngGg2vbTwFVTD0erj/42A/KbC9pdZahqTutNU3z9yrC1x4FySZn+NtmiWWMVZ13aPay6rW2NWc1UINMjdHcMWsYeWSB/CZW7yYekcIoVeAHKW0unSxrbFI8nrIvNlc2Wr34StQeMZ3lDWtZuEVHD5Hlwzxj3XIcGG1tNS/tYVbuL6q9TUvAi0AsvkpIOJBrtmabUVPqNnsQ1Y379I3F1Tq6eIHhx8vCY1is+mFZorFy2s1l4ZzbYvRCp4DHiOfD31OyenapkvH4Lq1bhnKswUj6MZla3eKOxGsSW2Vs56CZPqwveWbnBd99weC7xx+UgMzM6afAxgwjBisZCiiigCRgwhAEIRkAMQhABhAwoVmtsvVWIjMoBRLF3sjODYpHHy/RiT9/XptZotYGBU3B7U61br4b6qTiZ2ztZ3bNkb1diGu1M4LISCCD0YEAg+ImzodnUXIqsQWsBO9y3Tjl5TRj6o7TDmfxz3ezN7Y6RadY6Icqw7wHOeDEnIPhMQzU25azJpxYpFtCGh2P46lOaz7AkegEygeEzzVM2Yn0oBpGZI0jMVFgpUvt3jjoPzh6izpK4EEpeC2MfI8UMVGI1GJtY25AZl/Zt3ND6r/cSgYVb7pB8DmGD2yFyR3RaNwVyenhI62yAfESVZvRyJt9mX6nlqt5nVNLKPLUzBkgXC8gGhs1Fi11MFYkD4s7vHxxBZ50HYXSmzUb5HBf6xm+AY1tdozO0vZ19nChjqe9uu3yyKm7WqKFHMnJOTz4SvsLaj0LbvjerZSx64tUE1ny+PdEt/aBtLv9fYFOUoA06Y5ZTO+f5yw9hOdsuJULyAOfU+JmJZH5Ox8MWlwRMYJjmCZWaEqGMaIxorGQ8UaKAJCDCBkeYxeRMNE4MINKu/JEUmGxWidXlilN5LuOMIHUeJDqMfQn6SxszZLWEAAmd7s3sLXZS6ud13QhGH/Tfo3nxxwlkeOSmbT4OBo05ahrGUFVG63HiueAb6zHxidFrdPr9MLNDaiorOrOTuFSOXeI/PdOPy5ZmJbpXVijYzgkFTlWx1BlkupcITHcW7ZA4kDyx5SvZM5qKbcWlqmnEi0y8SfOWxDCPkM5Vwh1SOUjiEJejM2ypdRKjDE1mGZn6pMHMqyx4svw5L4NPZ7ZrX6fQy2DKGzP1Y9T/WXAZoh9KMGVdTJ0aTK8qBo5sxLEUShZaazoOZ4Cek9nNM2l0b2KpNoQlRgt+kPLOOgJBPkJxfZPZZtsFjD4R8oPImdltnRXG2lqjlEUqwzkHPM4hy9Ma9lcYp5KXg841uitrYiwNvcyTx3s/iz1lNhPZrtmVW0hbF4468wZxG3Oy5QkpxExUdOM/Zx5gGW79MVJBErMsDLEwI0ciNFHQooooAlHeiEEQxFLCRFmxsvQ7xBPAShoqweJ5CaQ1mOA4CWwRnyX2R2GzLq6cYxmbdXaEDhmebffyOsgv2s3IGWWilY2eh7Xp0etZWvD76ruB67GrbdyTg9DxJ6dZT1fZ/R90Vpbu2GGrLFT6qzczkePUDznC/8AE3AzvH6yK7adjcCx+sKlTC8LYW09A1bnh1mZYJr6TaYYbl+SvJX5svkfEQtVszI3kwyniGXjL5YFNboCxyuHTMw1EISa3SsvSR7plDxyXgu3JjgwgYAhCFJiMMGDbSG5xxDAPhGUWJdBVjAAHIcoe9BVD4SzptBZYcKPc8pbHHJ+CqTS5bIN6a2xdkPc4LA7ueA6tNnY3ZQnDWdeWeH0HWd/szZNdSjdHxY5yzpxq5dzJPM59OP+TE+6dxUFUY4ccdPKBpNpMDzmrtoBUM5WlsmZ8kt3LHwR2qjqq9fkQL9QGBBmQlmBGN8qov3Mz9r7PVslR6ictqdPgzrr75kbQqB4iBoshNnOukiKy7akrsJWzSmRbsUPEUA1mQDDUyOEplZcXlswuIItkG9FHsTaTNZK+eMKMRImSiVzI4SGSqgMtXIG6IhLmj1dlRyh4dVPFT7QVpkq1TRjtdinI4yVM2dNtKizAvTcP7QG8v8AkfnNejs9prxmp1PmrBsfScslQk9WmIIKkgjkQcEe4m1Tk1ycvJhjF3GTR0TdgyflYH2gf8hXdP8A1Mg0e1NbV+r1FmPByLR/rBmpX2q2kPxVH1qT+0VqfhIWMq+rIyvV9n958vUY/rNLSfZuxxv2AeOBkyP/AJj2kw/Won/5qrz+YMFtRq7P1uqsI6je3R9BiLWX7IDzQX+zZtVdjNBRxvtJx0LAZ9hxllbNKnw6ahf+44JPsJz9SVLxd94+ZzDs25UnLErafmVlTzbu0f7N+nOd5jxPMmSajaiVjiROL1XaNjwWZd2sdz8Rz5SqVFuOEv8Aht7W2ubWwOUDSDrM/R6cnieAl9rgBgRDQqXCLFlsrWXyrdqJRv1UDHimy1fqIFjZSUqcufKS6q4chAOlyUL+crPJbGkDGVM0xBzFGjyDGPHiilBpCDQwZFFmFMBNHxIw8kVowrCAhCMDCEdCMJHIky3GQiGJYptFTjZOLzJl1RlQGEGliyy9lUsSfgurrGki7QfxlANCDR1ml7Knp4ejR/4nZ4xvv1h/EZSBhrA8rfkX4IeiybmPMmMMyMGGLMRd1h2JdkWK6s8yBLdRROQ3j4mZZ1Agtq/CDcifG2bL6w9T7SrdrJltqD4wFYscAExdw8cVdy3bqSYqay58upka1KvFzx/ZHP3jW6rPAcB4CAevRds1AUbq/WUbbcyA2TV0mhS09+yGvTruqFDEtfYBxVSemQcnp68qc2eOKO6XYvwaaWSW2PLKVOlexXZRncAYjPxFSSN4DqMjGZUnWajVjujbYVqFQ3dH3arvCz9hQfmXHBgeGD6TltRdvuzkKu8c7qjCjyEyaTUTz23Go+Pzz+I3avSwwVFSuXn88fjAzHgZjzaYaMqKKPKDSNEY8aEA0eLEWIQDhoYsMACPiMgEgtMMXyDdiAhsFFoXQhdKgEfjDYHEui4QhqJRGYXGHcI4IufeI/fmUwDCC+cO4GxFk3nxjd7Igg6mGN0dCfUyWDagu9kiVufIefCRi7HIAekYuTzMgKLKqi/Md4+A5fWOdUeSgKPLn9ZUzFmGybSUvB3oGYswWNRa0Ve/Yi4yM5YcvhHEzpbtTVUiC3fehd7uEVgLK3Iz3LZ4snD4X6cj0J5Oq5kOVJU4xkeEEsTxPE9SeJmLUaV55rc+lePzsb9Pqlgxvaut+ft/ZpptQNqEtvQPWpAWpSQlaZ5KOvvz6zPscEkqu6Oi5Lbo8MniZFmPmaIwjH6eOK+xllOUvq58/f8AkfMUbMaPYpQjxRSpFwjEIooUAUeNFIiBRxFFGAPGiikIOI8UUIGOIQjRQiMIRxHikAPHjxSCjR4ooxBGKKKRkFHjRQBFFFFCERiiiisKFFFFAE//2Q==" alt="Chat with Thuso">
+        </div>
+    
+        <!-- Modal for Thuso Chatbot -->
+        <div id="thuso-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <div class="chat-container">
+                    <div class="chat-box" id="chat-box">
+                        <div class="message bot-message">
+                            <p>Hello! I'm Katekani, your water assistant. How can I help you today?</p>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" id="user-input" placeholder="Type your question here...">
+                        <button id="send-button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </footer>
+
+  <!-- Copyright Section -->
+  <section id="copyright">
+    <div class="copyright__container">
+      <p>&copy; 2024 GreenTech. All rights reserved.</p>
+    </div>
+  </section>
+  <script>
+    // Get modal element
+    var modal = document.getElementById('thuso-modal');
+    var chatIcon = document.getElementById('chat-icon');
+    var closeModal = document.getElementById('close-modal');
+
+    // Open modal on icon click
+    chatIcon.onclick = function() {
+        modal.style.display = 'block';
+    }
+
+    // Close modal on clicking 'X'
+    closeModal.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+</body>
+
+</html>
